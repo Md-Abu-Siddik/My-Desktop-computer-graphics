@@ -6,6 +6,30 @@
 
 #include <stdlib.h>
 
+float rectangleShape(float x1, float x2, float y1, float y2, float r, float g, float b){
+    glBegin(GL_QUADS);
+
+    glColor3f(r, g, b);
+    glVertex3f(x1, y1, 0.0f);
+    glVertex3f(x2, y1, 0.0f);
+    glVertex3f(x2, y2, 0.0f);
+    glVertex3f(x1, y2, 0.0f);
+
+    glEnd();
+}
+
+float trapezoidShape(float x1, float x2, float x3, float x4, float y1, float y2, float y3, float y4, float r, float g, float b){
+    glBegin(GL_QUADS);
+
+    glColor3f(r, g, b);
+    glVertex3f(x1, y1, 0.0f);
+    glVertex3f(x2, y2, 0.0f);
+    glVertex3f(x3, y3, 0.0f);
+    glVertex3f(x4, y4, 0.0f);
+
+    glEnd();
+}
+
 void display(void){
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -106,6 +130,8 @@ void display(void){
     //Secondary monitor area
 
     //2nd monitor border
+
+    trapezoidShape(0.884, 1.125, 1.125, 0.884, 0.8, 0.81, 0.54, 0.55, 0.3, 0.3, 0.3);
 
     glBegin(GL_QUADS);
 
@@ -248,156 +274,68 @@ void display(void){
 
     //Table flat
 
-    glBegin(GL_QUADS);
-
-    glColor3f(0.56, 0.29, 0.09);
-    glVertex3f(0.02f, 0.5f, 0.0f);
-    glVertex3f(0.98f, 0.5f, 0.0f);
-    glVertex3f(0.98f, 0.48f, 0.0f);
-    glVertex3f(0.02f, 0.48f, 0.0f);
-
-    glEnd();
+    rectangleShape(0.11, 1.4, 0.5, 0.47, 0.56, 0.29, 0.09);
 
     //Table left leg
 
-    glBegin(GL_QUADS);
-
-    glColor3f(0.56, 0.29, 0.09);
-    glVertex3f(0.05f, 0.5f, 0.0f);
-    glVertex3f(0.06f, 0.5f, 0.0f);
-    glVertex3f(0.06f, 0.05f, 0.0f);
-    glVertex3f(0.05f, 0.05f, 0.0f);
-
-    glEnd();
+    rectangleShape(0.15, 0.17, 0.03, 0.5, 0.56, 0.29, 0.09);
 
     //Table middle leg
 
-    glBegin(GL_QUADS);
-
-    glColor3f(0.56, 0.29, 0.09);
-    glVertex3f(0.75f, 0.5f, 0.0f);
-    glVertex3f(0.76f, 0.5f, 0.0f);
-    glVertex3f(0.76f, 0.05f, 0.0f);
-    glVertex3f(0.75f, 0.05f, 0.0f);
-
-    glEnd();
+    rectangleShape(1.1, 1.12, 0.03, 0.5, 0.56, 0.29, 0.09);
 
     //Table right leg
 
-    glBegin(GL_QUADS);
-
-    glColor3f(0.56, 0.29, 0.09);
-    glVertex3f(0.94f, 0.5f, 0.0f);
-    glVertex3f(0.95f, 0.5f, 0.0f);
-    glVertex3f(0.95f, 0.05f, 0.0f);
-    glVertex3f(0.94f, 0.05f, 0.0f);
-
-    glEnd();
+    rectangleShape(1.33, 1.35, 0.03, 0.5, 0.56, 0.29, 0.09);
 
     //CPU flat
 
-    glBegin(GL_QUADS);
-
-    glVertex3f(0.75f, 0.077f, 0.0f);
-    glVertex3f(0.95f, 0.077, 0.0f);
-    glVertex3f(0.95f, 0.06f, 0.0f);
-    glVertex3f(0.76f, 0.06f, 0.0f);
-
-    glEnd();
+    rectangleShape(1.1, 1.33, 0.077, 0.06, 0.56, 0.29, 0.09);
 
     //CPU body
 
-    glBegin(GL_QUADS);
-
-    glColor3f(0.49, 0.49, 0.49);
-    glVertex3f(0.79f, 0.44f, 0.0f);
-    glVertex3f(0.91f, 0.44, 0.0f);
-    glVertex3f(0.91f, 0.09f, 0.0f);
-    glVertex3f(0.79f, 0.09f, 0.0f);
-
-    glEnd();
-
-    //CPU left leg
-
-    glBegin(GL_QUADS);
-
-    glColor3f(0.49, 0.49, 0.49);
-    glVertex3f(0.79f, 0.077f, 0.0f);
-    glVertex3f(0.80f, 0.077f, 0.0f);
-    glVertex3f(0.80f, 0.09f, 0.0f);
-    glVertex3f(0.79f, 0.09f, 0.0f);
-
-    glEnd();
-
-    //CPU right leg
-
-    glBegin(GL_QUADS);
-
-    glColor3f(0.49, 0.49, 0.49);
-    glVertex3f(0.9f, 0.077f, 0.0f);
-    glVertex3f(0.91f, 0.077f, 0.0f);
-    glVertex3f(0.91f, 0.09f, 0.0f);
-    glVertex3f(0.9f, 0.09f, 0.0f);
-
-    glEnd();
+    rectangleShape(1.165, 1.285, 0.44, 0.09, 0.46, 0.46, 0.46);
 
     //CPU up side
 
-    glBegin(GL_QUADS);
-
-    glColor3f(0.9, 0.9, 0.9);
-    glVertex3f(0.8f, 0.42f, 0.0f);
-    glVertex3f(0.9f, 0.42, 0.0f);
-    glVertex3f(0.9f, 0.27f, 0.0f);
-    glVertex3f(0.8f, 0.27f, 0.0f);
-
-    glEnd();
+    rectangleShape(1.175, 1.275, 0.42, 0.27, 0.9, 0.9, 0.9);
 
     //CPU DVD
 
-    glBegin(GL_QUADS);
+    rectangleShape(1.18, 1.27, 0.385, 0.355, 0.49, 0.49, 0.49);
 
-    glColor3f(0.49, 0.49, 0.49);
-    glVertex3f(0.81f, 0.38f, 0.0f);
-    glVertex3f(0.89f, 0.38, 0.0f);
-    glVertex3f(0.89f, 0.35f, 0.0f);
-    glVertex3f(0.81f, 0.35f, 0.0f);
+    //USB port 1
 
-    glEnd();
+    rectangleShape(1.18, 1.195, 0.345, 0.335, 0.45, 0.45, 0.45);
+
+    //USB port 1
+
+    rectangleShape(1.2, 1.216, 0.345, 0.335, 0.45, 0.45, 0.45);
 
     //CPU left case
 
-    glBegin(GL_QUADS);
-
-    glColor3f(0.66, 0.66, 0.66);
-    glVertex3f(0.80f, 0.25f, 0.0f);
-    glVertex3f(0.82f, 0.25, 0.0f);
-    glVertex3f(0.84f, 0.11f, 0.0f);
-    glVertex3f(0.80f, 0.11f, 0.0f);
-
-    glEnd();
+    trapezoidShape(1.175, 1.195, 1.215, 1.175, 0.25, 0.25, 0.11, 0.11, 0.9, 0.9, 0.9);
 
     //CPU right case
 
-    glBegin(GL_QUADS);
+    trapezoidShape(1.255, 1.275, 1.275, 1.235, 0.25, 0.25, 0.11, 0.11, 0.9, 0.9, 0.9);
 
-    glColor3f(0.66, 0.66, 0.66);
-    glVertex3f(0.88f, 0.25f, 0.0f);
-    glVertex3f(0.9f, 0.25, 0.0f);
-    glVertex3f(0.9f, 0.11f, 0.0f);
-    glVertex3f(0.86f, 0.11f, 0.0f);
+    //CPU left leg
 
-    glEnd();
+    rectangleShape(1.165, 1.175, 0.077, 0.09, 0.46, 0.46, 0.46);
+
+    //CPU right leg
+
+    rectangleShape(1.275, 1.285, 0.077, 0.09, 0.46, 0.46, 0.46);
 
     glFlush();
 }
 
 void init(void){
-    //glClearColor(5.0f / 255.0f, 89.0f / 255.0f, 69.0f / 255.0f, 1.0f);
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0.0, 1.0, 0.0, 1.0, -10.0, 10.0);
+    glOrtho(0.0, 1.5, 0.0, 1.5, -10.0, 10.0);
 }
 
 int main(int argc, char *argv[])
